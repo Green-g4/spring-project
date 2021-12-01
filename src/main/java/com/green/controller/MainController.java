@@ -1,6 +1,8 @@
 package com.green.controller;
 
 import com.green.mapper.MemberMapper;
+import com.green.mapper.ReviewMapper;
+import com.green.service.*;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +17,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class MainController {
 
     @Setter(onMethod_=@Autowired)
-    MemberMapper memberMapper;
+    MemberService memberService;
+
+    @Setter(onMethod_=@Autowired)
+    CategoryService categoryService;
+
+    @Setter(onMethod_=@Autowired)
+    OrdersService ordersService;
+
+    @Setter(onMethod_=@Autowired)
+    ProductService productService;
+
+    @Setter(onMethod_=@Autowired)
+    ReviewService reviewService;
 
     @GetMapping("/main")
     public void goMain(){
