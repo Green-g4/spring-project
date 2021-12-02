@@ -1,40 +1,28 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Welcome BookMall</title>
-  <link rel="stylesheet" href="/resources/main.css">
+  <%@ include file="/resources/header/Spheader.jsp" %>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet"/>
+  <link href="/resources/login/login.css" rel="stylesheet"/>
+  <title>로그인 페이지 입니다.</title>
 </head>
 <body>
-
-<div class="wrapper">
-  <div class="wrap">
-    <div class="top_gnb_area">
-      <h1>gnb area</h1>
-    </div>
-    <div class="top_area">
-      <div class="logo_area">
-        <h1>logo area</h1>
-      </div>
-      <div class="search_area">
-        <h1>Search area</h1>
-      </div>
-      <div class="login_area">
-        <div class="login_button"><a href="/member/login">로그인</a></div>
-        <span><a href="/member/join">회원가입</a></span>
-      </div>
-      <div class="clearfix"></div>
-    </div>
-    <div class="navi_bar_area">
-      <h1>navi area</h1>
-    </div>
-    <div class="content_area">
-      <h1>content area</h1>
-    </div>
+<div class="v1_1583">
+  <span class="v1_1597">로그인</span>
+  <input class="v1_1599" value="아이디"></input>
+  <input class="v1_1600" value="비밀번호"></input>
+  <a href="#" class="myButton">로그인</a>
+  <div class="v1_1601">
+    <a href="#" class="v1_1602">아이디 찾기</a>
+    <a href="#" class="v1_1603">비밀번호 찾기</a>
+    <a href="#" class="v1_1604">회원가입</a>
   </div>
 </div>
-
+<%@ include file="/resources/footer/footer.jsp"%>
 </body>
 </html>

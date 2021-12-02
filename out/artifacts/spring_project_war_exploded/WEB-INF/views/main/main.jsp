@@ -8,8 +8,9 @@
     <%@ include file="/resources/header/Spheader.jsp" %>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet"/>
-    <link href="/resources/main/main.css" rel="stylesheet"/>
+    <link href="/resources/main/main.css?after" rel="stylesheet"/>
     <title>메인 페이지 입니다.</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
 <div class="v1_1356">
@@ -113,14 +114,10 @@
     <div class="v1_1491"></div>
     <div class="name"></div>
     <div class="v1_1493">
-        <span class="v1_1494">디지털문구</span><span class="v1_1495">디지털</span><span class="v1_1496">키덜트/취미</span>
-        <span class="v1_1497">펫샵</span><span class="v1_1498">여행/레포츠</span><span class="v1_1499">가구/수납</span>
-        <span class="v1_1500">패브릭</span><span class="v1_1501">인테리어</span>
+        <span class="v1_1494">디지털/가전</span><span class="v1_1495">생활/전자</span><span class="v1_1496">스포츠/레저</span>
     </div>
     <div class="v1_1502">
-        <span class="v1_1503">디지털문구</span><span class="v1_1504">디지털</span><span class="v1_1505">키덜트/취미</span>
-        <span class="v1_1506">펫샵</span><span class="v1_1507">여행/레포츠</span><span class="v1_1508">가구/수납</span>
-        <span class="v1_1509">패브릭</span><span class="v1_1510">인테리어</span>
+        <span class="v1_1503">디지털/가전</span><span class="v1_1504">생활/전자</span><span class="v1_1505">스포츠/레저</span>
     </div>
     <div class="v1_1511"></div>
     <div class="v1_1512"></div>

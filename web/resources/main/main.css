@@ -1566,7 +1566,7 @@ body {
   color: rgba(0, 0, 0, 1);
   position: absolute;
   top: 0px;
-  left: 100px;
+  left: 25%;
   font-family: Noto Sans KR;
   font-weight: Medium;
   font-size: 18px;
@@ -1578,7 +1578,7 @@ body {
   color: rgba(159, 157, 157, 1);
   position: absolute;
   top: 0px;
-  left: 240px;
+  left: 50%;
   font-family: Noto Sans KR;
   font-weight: Regular;
   font-size: 18px;
@@ -1590,67 +1590,7 @@ body {
   color: rgba(159, 157, 157, 1);
   position: absolute;
   top: 0px;
-  left: 380px;
-  font-family: Noto Sans KR;
-  font-weight: Regular;
-  font-size: 18px;
-  opacity: 1;
-  text-align: center;
-}
-.v1_1497 {
-  width: 100px;
-  color: rgba(159, 157, 157, 1);
-  position: absolute;
-  top: 0px;
-  left: 520px;
-  font-family: Noto Sans KR;
-  font-weight: Regular;
-  font-size: 18px;
-  opacity: 1;
-  text-align: center;
-}
-.v1_1498 {
-  width: 100px;
-  color: rgba(159, 157, 157, 1);
-  position: absolute;
-  top: 0px;
-  left: 660px;
-  font-family: Noto Sans KR;
-  font-weight: Regular;
-  font-size: 18px;
-  opacity: 1;
-  text-align: center;
-}
-.v1_1499 {
-  width: 100px;
-  color: rgba(159, 157, 157, 1);
-  position: absolute;
-  top: 0px;
-  left: 800px;
-  font-family: Noto Sans KR;
-  font-weight: Regular;
-  font-size: 18px;
-  opacity: 1;
-  text-align: center;
-}
-.v1_1500 {
-  width: 100px;
-  color: rgba(159, 157, 157, 1);
-  position: absolute;
-  top: 0px;
-  left: 940px;
-  font-family: Noto Sans KR;
-  font-weight: Regular;
-  font-size: 18px;
-  opacity: 1;
-  text-align: center;
-}
-.v1_1501 {
-  width: 100px;
-  color: rgba(159, 157, 157, 1);
-  position: absolute;
-  top: 0px;
-  left: 1080px;
+  left: 75%;
   font-family: Noto Sans KR;
   font-weight: Regular;
   font-size: 18px;
@@ -1676,7 +1616,7 @@ body {
   color: rgba(0, 0, 0, 1);
   position: absolute;
   top: 0px;
-  left: 100px;
+  left: 25%;
   font-family: Noto Sans KR;
   font-weight: Medium;
   font-size: 18px;
@@ -1688,7 +1628,7 @@ body {
   color: rgba(159, 157, 157, 1);
   position: absolute;
   top: 0px;
-  left: 240px;
+  left: 50%;
   font-family: Noto Sans KR;
   font-weight: Regular;
   font-size: 18px;
@@ -1700,67 +1640,7 @@ body {
   color: rgba(159, 157, 157, 1);
   position: absolute;
   top: 0px;
-  left: 380px;
-  font-family: Noto Sans KR;
-  font-weight: Regular;
-  font-size: 18px;
-  opacity: 1;
-  text-align: center;
-}
-.v1_1506 {
-  width: 100px;
-  color: rgba(159, 157, 157, 1);
-  position: absolute;
-  top: 0px;
-  left: 520px;
-  font-family: Noto Sans KR;
-  font-weight: Regular;
-  font-size: 18px;
-  opacity: 1;
-  text-align: center;
-}
-.v1_1507 {
-  width: 100px;
-  color: rgba(159, 157, 157, 1);
-  position: absolute;
-  top: 0px;
-  left: 660px;
-  font-family: Noto Sans KR;
-  font-weight: Regular;
-  font-size: 18px;
-  opacity: 1;
-  text-align: center;
-}
-.v1_1508 {
-  width: 100px;
-  color: rgba(159, 157, 157, 1);
-  position: absolute;
-  top: 0px;
-  left: 800px;
-  font-family: Noto Sans KR;
-  font-weight: Regular;
-  font-size: 18px;
-  opacity: 1;
-  text-align: center;
-}
-.v1_1509 {
-  width: 100px;
-  color: rgba(159, 157, 157, 1);
-  position: absolute;
-  top: 0px;
-  left: 940px;
-  font-family: Noto Sans KR;
-  font-weight: Regular;
-  font-size: 18px;
-  opacity: 1;
-  text-align: center;
-}
-.v1_1510 {
-  width: 100px;
-  color: rgba(159, 157, 157, 1);
-  position: absolute;
-  top: 0px;
-  left: 1080px;
+  left: 75%;
   font-family: Noto Sans KR;
   font-weight: Regular;
   font-size: 18px;

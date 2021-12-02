@@ -17,6 +17,7 @@ public class ProductVO {
     private int product_stock;
     private String product_img;
     private Date product_date;
+    private String category_name;
 }
 
 

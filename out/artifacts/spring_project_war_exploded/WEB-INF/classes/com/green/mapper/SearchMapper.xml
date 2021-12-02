@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.green.mapper.SearchMapper">
+    <!--검색 조건 -->
+    <sql id="Criteria">
+        <if test="keyword != null">
+            where (product_name like concat ('%', #{keyword}, '%'))
+        </if>
+    </sql>
+    <!--상품 검색 -->
+    <select id="getProductList" resultType="com.green.vo.ProductVO">
+        select a.id, a.product_name, b.category_name, a.product_totalprice, a.product_stock
+        from product a left outer join category b on a.category_name=b.category_name
+        <include refid="Criteria"></include>
+        order by a.id desc
+        limit #{skip}, #{amount}
+    </select>
+    <!--상품 퐁 개수 -->
+    <select id="getTotal" resultType="int">
+        select count(*) from product
+        <include refid="Criteria"></include>
+    </select>
+</mapper>

@@ -24,12 +24,12 @@ public class MemberTest {
     private MemberMapper mapper;
 
 
-    //@Test
+    @Test
     public void inserttest(){
        mapper.getList().forEach(i->log.info(i));
     }
 
-    //@Test
+    @Test
     public void addtest(){
         MemberVO vo = new MemberVO();
         vo.setId(1);

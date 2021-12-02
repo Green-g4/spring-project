@@ -19,4 +19,3 @@ public class LoginController {
         log.info("login");
     }
 }
-
