@@ -20,6 +20,7 @@ public class SearchServiceImpl implements SearchService{
     @Override
     public List<ProductVO> getProductList(Criteria cri) {
         log.info("상품리스트를 불러옵니다...");
+
         return mapper.getProductList(cri);
     }
 
@@ -28,4 +29,5 @@ public class SearchServiceImpl implements SearchService{
         log.info("전체상품이 몇개있는지 가져옵니다...");
         return mapper.getTotal(cri);
     }
+
 }

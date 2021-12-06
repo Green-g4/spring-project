@@ -38,4 +38,5 @@ public class SearchController {
         model.addAttribute("pageMaker", new PageDTO(cri,service.getTotal(cri)));
         return "product/search";
     }
+
 }

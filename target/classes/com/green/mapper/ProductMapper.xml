@@ -6,12 +6,21 @@
     <select id="getList" resultType="com.green.vo.ProductVO">
         select * from product
     </select>
+    <select id="digital_homeappList" resultType="com.green.vo.ProductVO">
+        select * from product where category_name = "digital/homeapp"
+    </select>
+    <select id="life_healthList" resultType="com.green.vo.ProductVO">
+        select * from product where category_name = "life/health"
+    </select>
+    <select id="sports_leisureList" resultType="com.green.vo.ProductVO">
+        select * from product where category_name = "sports/leisure"
+    </select>
     <select id="read" resultType="com.green.vo.ProductVO">
         select * from product where id=#{id}
     </select>
     <insert id="insert">
-        insert into product(id,product_name,product_price,product_discount,product_totalprice,product_stock,product_img,product_date)
-        values (#{id},#{product_name},#{product_price},#{product_discount},#{product_totalprice},#{product_stock},#{product_img},now())
+        insert into product(id,product_name,product_price,product_discount,product_totalprice,product_stock,product_img,product_date,category_name)
+        values (#{id},#{product_name},#{product_price},#{product_discount},#{product_totalprice},#{product_stock},#{product_img},now(),#{category_name})
     </insert>
     <delete id="delete">
         delete from product where id=#{id}
@@ -19,7 +28,7 @@
     <update id="update">
         update product
         set product_name =#{product_name}, product_price=#{product_price}, product_discount=#{product_discount}, product_totalprice=#{product_totalprice},
-            product_stock =#{product_stock}, product_img=#{product_img}
+            product_stock =#{product_stock}, product_img=#{product_img}, category_name=#{category_name}
         where id = #{id}
     </update>
 </mapper>

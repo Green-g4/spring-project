@@ -23,6 +23,24 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
+    public List<ProductVO> digital_homeappList() {
+        log.info("서비스에서 category(digital/homeapp) getList---------------------------------");
+        return mapper.digital_homeappList();
+    }
+
+    @Override
+    public List<ProductVO> life_healthList() {
+        log.info("서비스에서 category(life/health) getList---------------------------------");
+        return mapper.life_healthList();
+    }
+
+    @Override
+    public List<ProductVO> sports_leisureList() {
+        log.info("서비스에서 category(sports/leisure) getList---------------------------------");
+        return mapper.sports_leisureList();
+    }
+
+    @Override
     public void insert(ProductVO vo) {
         log.info("서비스에서 product insert----------------------------------");
         mapper.insert(vo);

@@ -9,20 +9,24 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet"/>
     <link href="/resources/main/main.css?after" rel="stylesheet"/>
-    <title>메인 페이지 입니다.</title>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <title>NEOTREE</title>
 </head>
 <body>
 <div class="v1_1356">
     <div class="v1_1357"></div>
-    <span class="v1_1358">BEST ITEM</span><span class="v1_1359">ALL ITEMS</span><span class="v1_1360">ARRIVALS</span>
+    <span class="v1_1358">BEST ITEM</span><span class="v1_1359">ALL ITEMS</span><span class="v1_1360">NEW ITEM</span>
    <span class="v1_1361">최고의 인기상품들을 소개합니다</span><span class="v1_1362">전체 상품들을 소개합니다</span>
     <div class="name"></div>
     <div class="name"></div>
     <div class="name"></div>
     <div class="name"></div>
-    <div class="v1_1367"></div>
-    <div class="v1_1368"></div>
+    <div class="v1_1367">
+        <a class="best_prev" onclick="best_prevSlide()">&#10094;</a>
+    </div>
+    <div class="v1_1368">
+        <a class="best_next" onclick="best_prevSlide()">&#10095;</a>
+    </div>
     <div class="v1_1369"></div>
     <div class="v1_1370"></div>
     <div class="v1_1371"></div>
@@ -110,8 +114,20 @@
     <div class="v1_1481"><span class="v1_1482">원</span><span class="v1_1483">15,000</span></div>
     <div class="v1_1484"><span class="v1_1485">원</span><span class="v1_1486">15,000</span></div>
     <div class="v1_1487"><span class="v1_1488">원</span><span class="v1_1489">15,000</span></div>
-    <div class="v1_1490"></div>
-    <div class="v1_1491"></div>
+    <div class="v1_1490">
+        <div class="sidebar1">
+            <button class="sidebar-button" onclick="">
+                <i class="fas fa-truck fa-5x"></i>
+            </button>
+            <span class="sidebarText1">운송장 조회</span>
+        </div>
+        <div class="sidebar2"></div>
+        <div class="sidebar3"></div>
+    </div>
+    <div class="forTheTop">
+        <div class="forTheTopArrow" onclick="window.scrollTo(0,0);"><i class="fas fa-arrow-up"></i></div>
+    </div>
+<%--<div class="v1_1491"></div>--%>
     <div class="name"></div>
     <div class="v1_1493">
         <span class="v1_1494">디지털/가전</span><span class="v1_1495">생활/전자</span><span class="v1_1496">스포츠/레저</span>
@@ -183,8 +199,104 @@
     <div class="v1_1580"></div>
     <div class="v1_1581"></div>
     <div class="v1_1582"></div>
-    <div class="v1_1583"></div>
+    <div class="v1_1583">
+        <div class="slide eventpicture active">
+            <img src='http://drive.google.com/uc?export=view&id=1NWiaDn7-y6y7rKVkwGmU7vloeC4gDFFp' /><br>
+        </div>
+        <div class="slide eventpicture">
+            <img src='http://drive.google.com/uc?export=view&id=1EubuQE79Jyv5VX6e1cy1Okywucu4iwkt' /><br>
+        </div>
+        <div class="slide eventpicture">
+            <img src='http://drive.google.com/uc?export=view&id=14NyiohRJli9u7GpKs6he1h4zGerXDGnL' /><br>
+        </div>
+        <a class="banner_prev" onclick="banner_prevSlide()">&#10094;</a>
+        <a class="banner_next" onclick="banner_nextSlide()">&#10095;</a>
+    </div>
+
 </div>
 <%@ include file="/resources/footer/footer.jsp"%>
+<script type="text/javascript">
+$(document).ready(function (){
+    !$(".slide").not(".active").hide(); //첫번째 slide div외에 숨김
+    setInterval(banner_nextSlide,5000); //5초마다 다음슬라이드로
+})
+
+function banner_prevSlide(){ //이전슬라이드
+    $(".slide").hide()
+    let allSlide = $(".slide")
+    let currentIndex = 0
+
+    $(".slide").each(function (index,item){
+        if($(this).hasClass("active")){
+            currentIndex = index
+        }
+    })
+    let newIndex = 0
+    if(currentIndex<=0){
+        //현재 슬라이드의 index가 0일경우 마지막 슬라이드로보냄
+        newIndex = allSlide.length-1
+    }else {
+        //현재 슬라이드의 index에서 한칸뒤 index 지정
+        newIndex = currentIndex-1
+    }
+    $(".slide").removeClass("active") //active클래스 제거
+    $(".slide").eq(newIndex).addClass("active")
+    $(".slide").eq(newIndex).show()
+}
+
+function banner_nextSlide(){
+    $(".slide").hide()
+    let allSlide = $(".slide")
+    let currentIndex = 0
+
+    $(".slide").each(function (index,item){
+        if($(this).hasClass("active")){
+            currentIndex = index
+        }
+    })
+    let newIndex = 0
+    if(currentIndex >= allSlide.length-1){ //현재 슬라이드 index가 마지막 순서면 0번째로보냄
+        newIndex = 0
+    }else { //현재 슬라이드의 index에서 한칸 앞 index 지정
+        newIndex = currentIndex+1
+    }
+    $(".slide").removeClass("active") //active클래스 제거
+    $(".slide").eq(newIndex).addClass("active")
+    $(".slide").eq(newIndex).show()
+} // 이벤트 배너관련 스크립트 끝
+$(function (){
+  let $win = $(window)
+  let top = $(window).scrollTop();
+
+  let speed = 500
+  let easing = 'linear' //linear,swing
+  let $layer = $('.v1_1490')
+  let $topLayer = $('.forTheTop')
+  let layerTopOffset = 0 //px
+
+  $layer.css('position','relative').css('z-index','1')
+  $topLayer.css('position','relative').css('z-index','1')
+
+  if(top > 0){ // 스크롤바를 내리고 새로고침을 했을 경우 대비
+      $win.scrollTop(layerTopOffset + top)
+  }else{
+      $win.scrollTop(0)
+  }
+
+  //스크롤이벤트
+    $(window).scroll(function (){
+        yPosition = $win.scrollTop() - 10
+        yPosition2 = $win.scrollTop()
+        if (yPosition < 0){
+            yPosition = 0
+        }
+        if(yPosition2 < 0){
+            yPosition2 = 0
+        }
+        $layer.animate({"top":yPosition},{duration : speed, easing:easing, queue:false})
+        $topLayer.animate({"top":yPosition},{duration : speed, easing:easing, queue:false})
+    })
+})//사이드바 이동 스크립트 끝
+</script>
 </body>
 </html>

@@ -8,11 +8,10 @@
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet"/>
     <link href="/resources/product/product.css?after" rel="stylesheet"/>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <title>상품 페이지 입니다</title>
+    <title>NEOTREE</title>
 </head>
 <body>
 <c:forEach items="${list}" var="list">
-    <>
         <td>${list.id}번 상품 정보</td>
         <td>${list.product_name}</td>
         <td>${list.product_price}</td>
