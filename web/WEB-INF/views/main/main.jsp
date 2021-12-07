@@ -5,6 +5,12 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+            integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+            crossorigin="anonymous"
+    />
     <%@ include file="/resources/header/Spheader.jsp" %>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet"/>
@@ -121,8 +127,18 @@
             </button>
             <span class="sidebarText1">운송장 조회</span>
         </div>
-        <div class="sidebar2"></div>
-        <div class="sidebar3"></div>
+        <div class="sidebar2">
+            <button class="sidebar-button2" onclick="clip(); return false">
+                <i class="fas fa-share-alt fa-5x"></i>
+            </button>
+            <span class="sidebarText2">페이지 공유</span>
+        </div>
+        <div class="sidebar3">
+            <button class="sidebar-button3" onclick="">
+                <i class="fas fa-file-alt fa-5x"></i>
+            </button>
+            <span class="sidebarText3">문의하기</span>
+        </div>
     </div>
     <div class="forTheTop">
         <div class="forTheTopArrow" onclick="window.scrollTo(0,0);"><i class="fas fa-arrow-up"></i></div>
@@ -212,7 +228,6 @@
         <a class="banner_prev" onclick="banner_prevSlide()">&#10094;</a>
         <a class="banner_next" onclick="banner_nextSlide()">&#10095;</a>
     </div>
-
 </div>
 <%@ include file="/resources/footer/footer.jsp"%>
 <script type="text/javascript">
@@ -297,6 +312,18 @@ $(function (){
         $topLayer.animate({"top":yPosition},{duration : speed, easing:easing, queue:false})
     })
 })//사이드바 이동 스크립트 끝
+
+function clip(){ //클립보드에 복사
+    let url = '';
+    let textarea = document.createElement("textarea");
+    document.body.appendChild(textarea);
+    url = window.document.location.href;
+    textarea.value = url;
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+    alert("URL이 클립보드에 복사되었습니다.")
+}
 </script>
 </body>
 </html>

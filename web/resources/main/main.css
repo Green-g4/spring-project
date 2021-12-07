@@ -1579,6 +1579,7 @@ body {
   left: 19%;
   width: 60%;
   height: 20%;
+  top: 6%;
   position: absolute;
   background-color: rgba(196, 196, 196, 1);
   border: none;
@@ -1589,7 +1590,7 @@ body {
   height: 50%;
 }
 .sidebarText1 {
-  top: 23%;
+  top: 27%;
   left: 25%;
   position: absolute;
   font-family: 'GongGothicMedium';
@@ -1600,10 +1601,52 @@ body {
   height: 28%;
   margin: 5px;
 }
+.sidebar-button2 {
+  left: 15%;
+  width: 60%;
+  height: 20%;
+  top: 35%;
+  position: absolute;
+  background-color: rgba(196, 196, 196, 1);
+  border: none;
+  cursor: pointer;
+}
+.fas fa-share-alt fa-5x {
+  width: 80%;
+  height: 50%;
+}
+.sidebarText2 {
+  top: 55%;
+  left: 25%;
+  position: absolute;
+  font-family: 'GongGothicMedium';
+  border-bottom: solid 1px black;
+}
 .sidebar3 {
   width: 94%;
   height: 28%;
   margin: 5px;
+}
+.sidebar-button3 {
+  left: 15%;
+  width: 60%;
+  height: 20%;
+  top: 65%;
+  position: absolute;
+  background-color: rgba(196, 196, 196, 1);
+  border: none;
+  cursor: pointer;
+}
+.fas fa-file-alt fa-5x {
+  width: 80%;
+  height: 50%;
+}
+.sidebarText3 {
+  top: 85%;
+  left: 28%;
+  position: absolute;
+  font-family: 'GongGothicMedium';
+  border-bottom: solid 1px black;
 }
 .forTheTop {
   background: white;

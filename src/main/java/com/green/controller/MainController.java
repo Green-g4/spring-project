@@ -6,6 +6,7 @@ import com.green.service.*;
 import com.green.vo.Criteria;
 import com.green.vo.PageDTO;
 import com.green.vo.ProductVO;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -60,5 +62,15 @@ public class MainController {
         }
         model.addAttribute("pageMaker", new PageDTO(cri,searchService.getTotal(cri)));
         return "product/search";
+    }
+    @GetMapping("/urlFind")
+    public String urlFind(HttpServletRequest request){
+        String url = request.getRequestURL().toString();
+        if(request.getQueryString()!=null){
+            url = url + "?" + request.getQueryString();
+        }
+        System.out.println(url);
+
+        return "main/main";
     }
 }
