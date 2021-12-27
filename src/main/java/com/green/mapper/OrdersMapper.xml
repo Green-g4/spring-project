@@ -3,22 +3,49 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.green.mapper.OrdersMapper">
-    <select id="getList" resultType="com.green.vo.OrdersVO">
-        select * from orders
+    <!-- 주문 상품 정보 -->
+    <select id="getGoodsInfo" resultType="com.green.vo.OrderPageItemDTO">
+
+        select id, product_name, Product_Price, Product_Discount
+        from product where id = #{id}
+
     </select>
-    <select id="read" resultType="com.green.vo.OrdersVO">
-        select * from orders where id=#{id}
+    <select id="getOrderInfo" resultType="com.green.vo.OrderItemDTO">
+
+        select id, Product_Price, Product_Discount
+        from product where id = #{id}
+
     </select>
-    <insert id="insert">
-        insert into orders(id,orders_name,orders_id,orders_address,orders_phonenumber,orders_payment,orders_date,member_id,product_id)
-        values (#{id},#{orders_name},#{orders_id},#{orders_address},#{orders_phonenumber},#{orders_payment},now(),#{member_id},#{product_id})
+    <!-- 주문 테이블 등록 -->
+    <insert id="enrollOrder">
+
+        insert into product_order(orderId, address, member_id, member_address, orderState, deliveryCost, usePoint)
+        values(#{orderId},#{address}, #{member_id}, #{member_address}, '배송준비', #{deliveryCost}, #{usePoint})
+
     </insert>
-    <delete id="delete">
-        delete from orders where id=#{id}
-    </delete>
-    <update id="update">
-        update member
-        set orders_name =#{orders_name}, orders_id=#{orders_id}, orders_address=#{orders_address}, orders_phonenumber=#{orders_phonenumber}, orders_payment=#{orders_payment}
-        where id = #{id}
+    <!-- 주문 아이템 테이블 등록 -->
+    <insert id="enrollOrderItem">
+
+        insert into green_orderItem(orderId, Product_Id, Product_Count, Product_Price, Product_Discount, savePoint)
+        values(#{orderId}, #{Product_Id}, #{Product_Count}, #{Product_Price}, #{Product_Discount}, #{savePoint})
+
+    </insert>
+    <!-- 주문 금액 차감 -->
+    <update id="deductMoney">
+
+        update member set money = #{money}, point = #{point} where member_id = #{member_id}
+
     </update>
+    <!-- 주문 재고 차감 -->
+    <update id="deductStock">
+
+        update product set Product_Stock = #{Product_Stock} where id = #{id}
+
+    </update>
+
+    <delete id="deleteOrderCart">
+
+        delete from cart where member_id = #{member_id} and id = #{id}
+
+    </delete>
 </mapper>

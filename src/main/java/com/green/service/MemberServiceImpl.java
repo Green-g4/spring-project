@@ -11,12 +11,12 @@ import java.util.List;
 
 @Service
 @Log4j
-public class MemberServiceImpl implements MemberService{
-    @Setter(onMethod_=@Autowired)
+public class MemberServiceImpl implements MemberService {
+    @Setter(onMethod_ = @Autowired)
     private MemberMapper mapper;
 
     @Override
-    public List<MemberVO> getList() {
+    public List < MemberVO > getList() {
         log.info("서비스에서 member getList---------------------------------");
         return mapper.getList();
     }
@@ -44,4 +44,42 @@ public class MemberServiceImpl implements MemberService{
         log.info("서비스에서 member delete------------------");
         mapper.delete(id);
     }
+    @Override
+    public int idCheck(String member_id) throws Exception {
+
+        return mapper.idCheck(member_id);
+    }
+    @Override
+    public String findId(MemberVO vo) throws Exception {
+
+        return mapper.findId(vo);
+    }
+    @Override
+    public void changePw(MemberVO vo) throws Exception {
+
+        mapper.changePw(vo);
+    }
+
+    @Override
+    public String idMatchEmail(MemberVO vo) {
+        return mapper.idMatchEmail(vo);
+    }
+
+    @Override
+    public String adminCheck(String member_id) {
+        return mapper.adminCheck(member_id);
+    }
+
+    /* 로그인 */
+    @Override
+    public MemberVO memberLogin(MemberVO vo) throws Exception {
+
+        return mapper.memberLogin(vo);
+    }
+
+    @Override
+    public String getId(String member_id) {
+        return mapper.getId(member_id);
+    }
+
 }

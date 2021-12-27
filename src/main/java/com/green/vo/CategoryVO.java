@@ -8,9 +8,17 @@ import lombok.*;
 @NoArgsConstructor
 
 public class CategoryVO {
-    private int id;
-    private String category_name;
-    private int product_id;
+    /* 카테고리 등급 */
+    private int tier;
+
+    /* 카테고리 이름 */
+    private String cateName;
+
+    /* 카테고리 넘버 */
+    private String cateCode;
+
+    /* 상위 카테고리 */
+    private String cateParent;
 }
 
 

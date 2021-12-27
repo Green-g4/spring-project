@@ -35,7 +35,7 @@ body {
   overflow: hidden;
 }
 .v42_250 {
-  width: 10%;
+  width: 100px;
   color: rgba(255, 255, 255, 1);
   position: absolute;
   top: 138px;
@@ -45,9 +45,19 @@ body {
   font-size: 18px;
   opacity: 1;
   text-align: center;
+  cursor: pointer;
+  background-image: linear-gradient(rgb(121, 120, 120, 1), rgb(121, 120, 120, 1)), linear-gradient(#ffffff, #ffffff);
+  background-size: 100% 2px, 100% 2px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat, no-repeat;
+  transition: background-size 80ms linear;
 }
+.v42_250:hover {
+  background-size: 0 2px, 100% 2px;
+}
+
 .v42_251 {
-  width: 10%;
+  width: 100px;
   color: rgba(255, 255, 255, 1);
   position: absolute;
   top: 138px;
@@ -57,9 +67,18 @@ body {
   font-size: 18px;
   opacity: 1;
   text-align: center;
+  cursor: pointer;
+  background-image: linear-gradient(rgb(121, 120, 120, 1), rgb(121, 120, 120, 1)), linear-gradient(#ffffff, #ffffff);
+  background-size: 100% 2px, 100% 2px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat, no-repeat;
+  transition: background-size 80ms linear;
+}
+.v42_251:hover {
+  background-size: 0 2px, 100% 2px;
 }
 .v42_252 {
-  width: 10%;
+  width: 100px;
   color: rgba(255, 255, 255, 1);
   position: absolute;
   top: 138px;
@@ -69,9 +88,18 @@ body {
   font-size: 18px;
   opacity: 1;
   text-align: center;
+  cursor: pointer;
+  background-image: linear-gradient(rgb(121, 120, 120, 1), rgb(121, 120, 120, 1)), linear-gradient(#ffffff, #ffffff);
+  background-size: 100% 2px, 100% 2px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat, no-repeat;
+  transition: background-size 80ms linear;
+}
+.v42_252:hover {
+  background-size: 0 2px, 100% 2px;
 }
 .v42_253 {
-  width: 10%;
+  width: 75px;
   color: rgba(255, 255, 255, 1);
   position: absolute;
   top: 138px;
@@ -81,9 +109,18 @@ body {
   font-size: 18px;
   opacity: 1;
   text-align: center;
+  cursor: pointer;
+  background-image: linear-gradient(rgb(121, 120, 120, 1), rgb(121, 120, 120, 1)), linear-gradient(#ffffff, #ffffff);
+  background-size: 100% 2px, 100% 2px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat, no-repeat;
+  transition: background-size 80ms linear;
+}
+.v42_253:hover {
+  background-size: 0 2px, 100% 2px;
 }
 .v42_254 {
-  width: 10%;
+  width: 100px;
   color: rgba(255, 255, 255, 1);
   position: absolute;
   top: 138px;
@@ -93,9 +130,18 @@ body {
   font-size: 18px;
   opacity: 1;
   text-align: center;
+  cursor: pointer;
+  background-image: linear-gradient(rgb(121, 120, 120, 1), rgb(121, 120, 120, 1)), linear-gradient(#ffffff, #ffffff);
+  background-size: 100% 2px, 100% 2px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat, no-repeat;
+  transition: background-size 80ms linear;
+}
+.v42_254:hover {
+  background-size: 0 2px, 100% 2px;
 }
 .v42_241 {
-  width: 10%;
+  width: 11%;
   color: rgba(0, 0, 0, 1);
   position: absolute;
   top: 39px;
@@ -105,6 +151,14 @@ body {
   font-size: 36px;
   opacity: 1;
   text-align: center;
+  background-image: linear-gradient(rgba(196, 196, 196, 1), rgba(196, 196, 196, 1)), linear-gradient(#202020, #202020);
+  background-size: 100% 2px, 100% 2px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat, no-repeat;
+  transition: background-size 80ms linear;
+}
+.v42_241:hover {
+  background-size: 0 2px, 100% 2px;
 }
 .logo_button_underlineNone {
   text-decoration-line: none;
@@ -142,11 +196,12 @@ body {
 }
 .img-button {
   position: absolute;
-  top: 10px;
+  top: 11px;
   margin: 0;
   background-color: white;
   cursor: pointer;
   border: none;
+  left: 91%;
 }
 .v42_243 {
   width: 10%;
@@ -155,7 +210,7 @@ body {
   top: 50px;
   left: 65%;
   font-family: Roboto;
-  font-weight: Regular;
+  font-weight: bold;
   font-size: 18px;
   opacity: 1;
   text-align: center;
@@ -163,6 +218,14 @@ body {
 .login_button_underlineNone {
   text-decoration-line: none;
   color: rgba(88, 85, 85, 1);
+  background-image: linear-gradient(rgba(196, 196, 196, 1), rgba(196, 196, 196, 1)), linear-gradient(#202020, #202020);
+  background-size: 100% 2px, 100% 2px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat, no-repeat;
+  transition: background-size 80ms linear;
+}
+.login_button_underlineNone:hover {
+  background-size: 0 2px, 100% 2px;
 }
 .v42_244 {
   width: 10%;
@@ -171,14 +234,34 @@ body {
   top: 50px;
   left: 75%;
   font-family: Roboto;
-  font-weight: Regular;
+  font-weight: bold;
   font-size: 18px;
+  opacity: 1;
+  text-align: center;
+}
+.loginId {
+  width: 10%;
+  color: rgba(88, 85, 85, 1);
+  position: absolute;
+  top: 40px;
+  left: 57%;
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 17px;
   opacity: 1;
   text-align: center;
 }
 .register_button_underlineNone {
   text-decoration-line: none;
   color: rgba(88, 85, 85, 1);
+  background-image: linear-gradient(rgba(196, 196, 196, 1), rgba(196, 196, 196, 1)), linear-gradient(#202020, #202020);
+  background-size: 100% 2px, 100% 2px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat, no-repeat;
+  transition: background-size 80ms linear;
+}
+.register_button_underlineNone:hover {
+  background-size: 0 2px, 100% 2px;
 }
 .v42_245 {
   width: 10%;
@@ -191,8 +274,17 @@ body {
   font-size: 18px;
   opacity: 1;
   text-align: center;
+  font-weight: bold;
 }
 .cart_button_underlineNone {
   text-decoration-line: none;
   color: rgba(88, 85, 85, 1);
+  background-image: linear-gradient(rgba(196, 196, 196, 1), rgba(196, 196, 196, 1)), linear-gradient(#202020, #202020);
+  background-size: 100% 2px, 100% 2px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat, no-repeat;
+  transition: background-size 80ms linear;
+}
+.cart_button_underlineNone:hover {
+  background-size: 0 2px, 100% 2px;
 }

@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+}
+
+.v1_1583 {
+  width: 100%;
+  height: 700px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+
+.v1_1597 {
+  width: 30%;
+  color: rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 100px;
+  left: 35%;
+  font-family: Noto Sans KR;
+  font-weight: Bold;
+  font-size: 45px;
+  opacity: 1;
+  text-align: center;
+}
+
+.v1_1599 {
+  width: 40%;
+  height: 72px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  position: absolute;
+  top: 250px;
+  left: 30%;
+  border: 1px solid rgba(0, 0, 0, 1);
+  overflow: hidden;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.v1_1600 {
+  width: 40%;
+  height: 72px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  position: absolute;
+  top: 350px;
+  left: 30%;
+  border: 1px solid rgba(0, 0, 0, 1);
+  overflow: hidden;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.v1_1601 {
+  width: 40%;
+  height: 26px;
+  opacity: 1;
+  position: absolute;
+  top: 600px;
+  left: 30%;
+  overflow: hidden;
+}
+
+.v1_1602 {
+  width: 90px;
+  color: rgba(0, 0, 0, 1);
+  position: relative;
+  left: 20%;
+  font-family: Noto Sans KR;
+  font-weight: Regular;
+  font-size: 18px;
+  opacity: 1;
+  text-align: center;
+}
+.v1_1602:hover {
+  color: #808080;
+}
+
+.v1_1603 {
+  width: 110px;
+  color: rgba(0, 0, 0, 1);
+  position: absolute;
+  left: 42%;
+  font-family: Noto Sans KR;
+  font-weight: Regular;
+  font-size: 18px;
+  opacity: 1;
+  text-align: center;
+}
+.v1_1603:hover {
+  color: #808080;
+}
+
+.v1_1604 {
+  width: 70px;
+  color: rgba(0, 0, 0, 1);
+  position: absolute;
+  left: 65%;
+  font-family: Noto Sans KR;
+  font-weight: Regular;
+  font-size: 18px;
+  opacity: 1;
+  text-align: center;
+}
+.v1_1604:hover {
+  color: #808080;
+}
+
+.myButton {
+  background: linear-gradient(to bottom, #000000 5%, #000000 100%);
+  background-color: #000000;
+  border-radius: 9px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 17px;
+  padding: 10px 150px;
+  text-decoration: none;
+  text-align: center;
+  padding: 25px 0;
+  width: 40%;
+  height: 72px;
+  position: absolute;
+  top: 500px;
+  left: 30%;
+}
+
+.myButton:hover {
+  background: linear-gradient(to bottom, #000000 5%, #7892c2 100%);
+  background-color: #000000;
+}
+
+.myButton:active {
+  position: absolute;
+}
+
+.login_warn {
+  margin-top: 30px;
+  text-align: center;
+  color: red;
+  position: absolute;
+  top: 425px;
+  left: 43%;
+}

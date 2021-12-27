@@ -1,0 +1,25 @@
+.sidebar {
+    /* Rectangle 61 */
+
+    position: absolute;
+    width: 200px;
+    height: 1055px;
+    left: 322px;
+    top: 169px;
+
+    background: #C4C4C4;
+
+}
+
+.sidebar1{
+    /* Vector 28 */
+
+    position: absolute;
+    width: 200px;
+    height: 52px;
+    left: 322.5px;
+    top: 272.5px;
+
+    background: #716D6D;
+
+}

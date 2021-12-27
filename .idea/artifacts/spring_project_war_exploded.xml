@@ -57,6 +57,12 @@
           <element id="library" level="project" name="Maven: org.quartz-scheduler:quartz-jobs:2.3.0" />
           <element id="library" level="project" name="Maven: org.quartz-scheduler:quartz:2.3.0" />
           <element id="library" level="project" name="mysql-connector-java-8.0.26" />
+          <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
+          <element id="library" level="project" name="Maven: javax.mail:mail:1.4.7" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:5.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:5.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:5.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context-support:5.2.3.RELEASE" />
         </element>
       </element>
     </root>

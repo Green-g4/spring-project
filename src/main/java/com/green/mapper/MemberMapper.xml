@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper
-        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.green.mapper.MemberMapper">
     <select id="getList" resultType="com.green.vo.MemberVO">
         select * from member
@@ -9,16 +7,64 @@
     <select id="read" resultType="com.green.vo.MemberVO">
         select * from member where id=#{id}
     </select>
+
+    <select id="idMatchEmail" resultType="String">
+        select member_id from member where member_id=#{member_id} and member_email=#{member_email}
+    </select>
     <insert id="insert">
-        insert into member(id,member_id,member_password,member_name,member_address,member_phonenumber,member_gender,member_role,member_date)
-        values (#{id},#{member_id},#{member_password},#{member_name},#{member_address},#{member_phonenumber},#{member_gender},#{member_role},now())
+        insert into
+            member(id,member_id,member_email,member_password,member_name,member_address,member_phonenumber,member_gender,member_role,member_date)
+        values
+            (#{id},#{member_id},#{member_email},#{member_password},#{member_name},#{member_address},#{member_phonenumber},#{member_gender},#{member_role},now())
     </insert>
     <delete id="delete">
         delete from member where id=#{id}
     </delete>
     <update id="update">
         update member
-        set member_id =#{member_id}, member_password=#{member_password}, member_address=#{member_address}, member_phonenumber=#{member_phonenumber}
+        set member_id =#{member_id}, member_password=#{member_password}, member_address=#{member_address},
+            member_phonenumber=#{member_phonenumber}
         where id = #{id}
     </update>
+
+    <select id="idCheck" resultType="int">
+
+        select count(*) from member where member_id = #{member_id}
+
+    </select>
+    <select id="findId" resultType="String">
+
+        select member_id from member where member_name = #{member_name} and member_phonenumber = #{member_phonenumber}
+
+    </select>
+    <update id="changePw">
+
+        update member
+        set member_password=#{member_password} where member_id = #{member_id} and member_email = #{member_email}
+
+    </update>
+    <select id="memberLogin" resultType="com.green.vo.MemberVO">
+
+        select member_id,member_password, member_name,member_verify from member where member_id = #{member_id}
+
+
+    </select>
+    <select id="adminCheck" resultType="String">
+
+        select member_verify from member where member_id = #{member_id}
+
+    </select>
+    <select id="getId" resultType="String">
+
+        select id from member where member_id = #{member_id}
+
+    </select>
+    <!-- 주문자 정보 -->
+    <select id="getMemberInfo" resultType="com.green.vo.MemberVO">
+
+        SELECT member_id, member_name, member_email, member_address
+        FROM member
+        WHERE member_id = #{member_id}
+
+    </select>
 </mapper>

@@ -1,0 +1,263 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+}
+
+.v1_1583 {
+  width: 100%;
+  height: 1000px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+
+.v1_1597 {
+  width: 40%;
+  color: rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 50px;
+  left: 30%;
+  font-family: Noto Sans KR;
+  font-weight: Bold;
+  font-size: 45px;
+  opacity: 1;
+  text-align: center;
+}
+
+.v1_1598 {
+  width: 40%;
+  height: 72px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  position: absolute;
+  top: 200px;
+  left: 30%;
+  border: 1px solid rgba(0, 0, 0, 1);
+  overflow: hidden;
+  font-size: 20px;
+}
+
+.v1_1599 {
+  width: 40%;
+  height: 72px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  position: absolute;
+  top: 200px;
+  left: 30%;
+  border: 1px solid rgba(0, 0, 0, 1);
+  overflow: hidden;
+  font-size: 20px;
+  padding: 10px;
+}
+.email_input {
+  width: 40%;
+  height: 72px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  position: absolute;
+  top: 300px;
+  left: 30%;
+  border: 1px solid rgba(0, 0, 0, 1);
+  overflow: hidden;
+  font-size: 20px;
+  padding: 10px;
+}
+.email_check_input {
+  width: 15%;
+  height: 72px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  position: absolute;
+  top: 400px;
+  left: 30%;
+  border: 1px solid rgba(0, 0, 0, 1);
+  overflow: hidden;
+  font-size: 20px;
+  padding: 10px;
+}
+.v1_1601 {
+  width: 40%;
+  height: 72px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  position: absolute;
+  top: 500px;
+  left: 30%;
+  border: 1px solid rgba(0, 0, 0, 1);
+  overflow: hidden;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.v1_1601-1 {
+  width: 40%;
+  height: 72px;
+  background: rgba(255, 255, 255, 1);
+  opacity: 1;
+  position: absolute;
+  top: 600px;
+  left: 30%;
+  border: 1px solid rgba(0, 0, 0, 1);
+  overflow: hidden;
+  font-size: 20px;
+  padding: 10px;
+}
+#mail_check_input_box_warn {
+  position: absolute;
+  top: 478px;
+  left: 30%;
+}
+.final_mail_ck {
+  display: none;
+  position: absolute;
+  top: 378px;
+  left: 30%;
+}
+.mail_input_box_warn {
+  display: none;
+  position: absolute;
+  top: 378px;
+  left: 30%;
+}
+.myButton {
+  background: linear-gradient(to bottom, #000000 5%, #000000 100%);
+  background-color: #000000;
+  border-radius: 9px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 17px;
+  padding: 10px 150px;
+  text-decoration: none;
+  text-align: center;
+  padding: 25px 0;
+  width: 40%;
+  height: 72px;
+  position: absolute;
+  top: 800px;
+  left: 30%;
+}
+
+.myButton:hover {
+  background: linear-gradient(to bottom, #000000 5%, #7892c2 100%);
+  background-color: #000000;
+}
+
+.myButton:active {
+  position: absolute;
+}
+
+.myButton1 {
+  background: linear-gradient(to bottom, #000000 5%, #000000 100%);
+  background-color: #000000;
+  border-radius: 9px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 17px;
+  padding: 10px 150px;
+  text-decoration: none;
+  text-align: center;
+  padding: 25px 0;
+  width: 40%;
+  height: 72px;
+  position: absolute;
+  top: 880px;
+  left: 30%;
+}
+
+.myButton1:hover {
+  background: linear-gradient(to bottom, #000000 5%, #7892c2 100%);
+  background-color: #000000;
+}
+
+.myButton1:active {
+  position: absolute;
+}
+.emailchkbutton {
+  background: linear-gradient(to bottom, #000000 5%, #000000 100%);
+  background-color: #000000;
+  border-radius: 9px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 17px;
+  padding: 10px 150px;
+  text-decoration: none;
+  text-align: center;
+  padding: 25px 0;
+  width: 24%;
+  height: 72px;
+  position: absolute;
+  top: 400px;
+  left: 46%;
+}
+
+.emailchkbutton:hover {
+  background: linear-gradient(to bottom, #000000 5%, #7892c2 100%);
+  background-color: #000000;
+}
+
+.emailchkbutton:active {
+  position: absolute;
+}
+/* 비밀번호 확인 일치 유효성검사 */
+.pwck_input_re_1 {
+  color: green;
+  display: none;
+  position: absolute;
+  top: 678px;
+  left: 30%;
+}
+
+.pwck_input_re_2 {
+  color: red;
+  display: none;
+  position: absolute;
+  top: 678px;
+  left: 30%;
+}
+
+.final_pw_ck {
+  display: none;
+  position: absolute;
+  top: 578px;
+  left: 30%;
+}
+
+.final_pwck_ck {
+  display: none;
+  position: absolute;
+  top: 678px;
+  left: 30%;
+}
+.final_id_ck {
+  display: none;
+  position: absolute;
+  top: 278px;
+  left: 30%;
+}
+#mail_check_input_box_false {
+  background-color: #ebebe4;
+}
+
+#mail_check_input_box_true {
+  background-color: white;
+}
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+}

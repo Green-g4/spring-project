@@ -19,10 +19,13 @@ public class MemberVO {
     private String member_gender;
     private String member_role;
     private Date member_date;
+    private String member_email;
+    private String member_verify;
+    private int adminCk;
+    //등록일자
+    private int regDate;
+    //회원 돈
+    private int money;
+    //회원 포인트
+    private int point;
 }
-
-
-
-
-
-

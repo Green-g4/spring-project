@@ -11,8 +11,8 @@
     </sql>
     <!-- 상품 검색 -->
     <select id="getProductList" resultType="com.green.vo.ProductVO">
-        select a.id, a.product_name, b.category_name, a.product_totalprice, a.product_stock
-        from product a left outer join category b on a.category_name=b.category_name
+        select a.id, a.product_name, b.cateName, a.product_price, a.product_stock
+        from product a left outer join category b on a.cateName=b.cateName
         <include refid="Criteria"></include>
         order by a.id desc
         limit #{skip}, #{amount}

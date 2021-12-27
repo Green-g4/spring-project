@@ -3,17 +3,151 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.green.mapper.ProductMapper">
+    <select id="getListAsc" resultType="com.green.vo.ProductVO">
+        select a.id, a.product_name, b.cateName, a.product_price, a.product_stock, a.cateName
+        from product a left outer join category b on a.cateName=b.cateName
+        <if test="keyword != null">
+            where (product_name like concat ('%',#{keyword},'%'))
+        </if>
+        order by a.id asc
+        limit #{skip}, #{amount}
+    </select>
     <select id="getList" resultType="com.green.vo.ProductVO">
-        select * from product
+        select a.id, a.product_name, b.cateName, a.product_price, a.product_stock, a.cateName
+        from product a left outer join category b on a.cateName=b.cateName
+        <if test="keyword != null">
+            where (product_name like concat ('%',#{keyword},'%'))
+        </if>
+        order by a.id desc
+        limit #{skip}, #{amount}
     </select>
-    <select id="digital_homeappList" resultType="com.green.vo.ProductVO">
-        select * from product where category_name = "digital/homeapp"
+    <select id="getListCategory1" resultType="com.green.vo.ProductVO">
+        select a.id, a.product_name, b.cateName, a.product_price, a.product_stock, a.cateName
+        from product a left outer join category b on a.cateName=b.cateName
+        where a.cateName = "digital/homeapp"
+        order by a.id desc
+        limit #{skip}, #{amount}
     </select>
-    <select id="life_healthList" resultType="com.green.vo.ProductVO">
-        select * from product where category_name = "life/health"
+    <select id="getListCategory2" resultType="com.green.vo.ProductVO">
+        select a.id, a.product_name, b.cateName, a.product_price, a.product_stock, a.cateName
+        from product a left outer join category b on a.cateName=b.cateName
+        where a.cateName = "life/health"
+        order by a.id desc
+            limit #{skip}, #{amount}
     </select>
-    <select id="sports_leisureList" resultType="com.green.vo.ProductVO">
-        select * from product where category_name = "sports/leisure"
+    <select id="getListCategory3" resultType="com.green.vo.ProductVO">
+        select a.id, a.product_name, b.cateName, a.product_price, a.product_stock, a.cateName
+        from product a left outer join category b on a.cateName=b.cateName
+        where a.cateName = "sports/leisure"
+        order by a.id desc
+            limit #{skip}, #{amount}
+    </select>
+    <select id="getListPriceDesc1" resultType="com.green.vo.ProductVO">
+        select a.id, a.product_name, b.cateName, a.product_price, a.product_stock, a.cateName
+        from product a left outer join category b on a.cateName=b.cateName
+        where a.cateName = "digital/homeapp"
+        order by a.product_price desc
+            limit #{skip}, #{amount}
+    </select>
+    <select id="getListPriceAsc1" resultType="com.green.vo.ProductVO">
+        select a.id, a.product_name, b.cateName, a.product_price, a.product_stock, a.cateName
+        from product a left outer join category b on a.cateName=b.cateName
+        where a.cateName = "digital/homeapp"
+        order by a.product_price asc
+            limit #{skip}, #{amount}
+    </select>
+    <select id="getListPriceDesc2" resultType="com.green.vo.ProductVO">
+        select a.id, a.product_name, b.cateName, a.product_price, a.product_stock, a.cateName
+        from product a left outer join category b on a.cateName=b.cateName
+        where a.cateName = "life/health"
+        order by a.product_price desc
+            limit #{skip}, #{amount}
+    </select>
+    <select id="getListPriceAsc2" resultType="com.green.vo.ProductVO">
+        select a.id, a.product_name, b.cateName, a.product_price, a.product_stock, a.cateName
+        from product a left outer join category b on a.cateName=b.cateName
+        where a.cateName = "life/health"
+        order by a.product_price asc
+            limit #{skip}, #{amount}
+    </select>
+    <select id="getListPriceDesc3" resultType="com.green.vo.ProductVO">
+        select a.id, a.product_name, b.cateName, a.product_price, a.product_stock, a.cateName
+        from product a left outer join category b on a.cateName=b.cateName
+        where a.cateName = "sports/leisure"
+        order by a.product_price desc
+            limit #{skip}, #{amount}
+    </select>
+    <select id="getListPriceAsc3" resultType="com.green.vo.ProductVO">
+        select a.id, a.product_name, b.cateName, a.product_price, a.product_stock, a.cateName
+        from product a left outer join category b on a.cateName=b.cateName
+        where a.cateName = "sports/leisure"
+        order by a.product_price asc
+            limit #{skip}, #{amount}
+    </select>
+    <select id="productGetTotal" resultType="int">
+        select count(*) from product
+        <if test="keyword != null">
+            where product_name like concat('%',#{keyword},'%')
+        </if>
+    </select>
+    <select id="productGetTotalCate1" resultType="int">
+        select count(*) from product where cateName="digital/homeapp"
+    </select>
+    <select id="productGetTotalCate2" resultType="int">
+        select count(*) from product where cateName="life/health"
+    </select>
+    <select id="productGetTotalCate3" resultType="int">
+        select count(*) from product where cateName="sports/leisure"
+    </select>
+    <select id="getListCategory" resultType="com.green.vo.ProductVO">
+        select * from product where cateName = #{cateName}
+    </select>
+    <!-- criteria(검색조건) -->
+    <sql id="criteria">
+
+        <trim prefix="where (" suffix=")" prefixOverrides="AND">
+            <foreach item="type" collection="typeArr">
+                <trim prefix="AND">
+                    <choose>
+                        <when test="type == 'A'.toString()">
+                            <trim prefixOverrides="or">
+                                <foreach collection="authorArr" item="authorId">
+                                    <trim prefix="or">
+                                        a.authorId = #{authorId}
+                                    </trim>
+                                </foreach>
+                            </trim>
+                        </when>
+                        <when test="type == 'C'.toString()">
+                            a.cateCode like concat ('%', #{cateCode}, '%')
+                        </when>
+                        <when test="type == 'T'.toString()">
+                            product_name like concat ('%', #{keyword}, '%')
+                        </when>
+                    </choose>
+                </trim>
+            </foreach>
+        </trim>
+    </sql>
+    <!-- 상품 검색 -->
+    <select id="getGoodsList" resultType="com.green.vo.ProductVO">
+
+        select  id, product_name, b.authorName, a.authorId, c.cateName, a.cateCode, Product_Price
+        from product a left outer join author b on a.authorId = b.authorId
+        left outer join category c on a.cateCode = c.cateCode
+        <include refid="criteria"></include>
+        order by id desc
+        limit #{skip}, #{amount}
+
+    </select>
+    <!-- 상품 정보 -->
+    <select id="getGoodsInfo" resultType="com.green.vo.ProductVO">
+
+        select a.id, a.product_name, a.authorId, b.authorName, a.cateCode, c.cateName, a.product_price, a.product_stock, a.product_discount, a.product_intro
+        from product a left outer join author b on a.authorId = b.authorId
+                       left outer join category c on a.cateCode = c.cateCode
+        where id = #{id}
+
     </select>
     <select id="read" resultType="com.green.vo.ProductVO">
         select * from product where id=#{id}

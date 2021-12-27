@@ -42,11 +42,30 @@ public class MainController {
     @Setter(onMethod_=@Autowired)
     SearchService searchService;
 
-    @GetMapping("/main")
-    public void goMain(){
+    @GetMapping({"/main", "/main_develop"})
+    public void goMain(Criteria cri,Model model){
         log.info("메인페이지로");
+        List<ProductVO> productList = productService.getList(cri);
+        List<ProductVO> productListAsc = productService.getListAsc(cri);
+        List<ProductVO> list1 = productService.getListCategory("digital/homeapp");
+        List<ProductVO> list2 = productService.getListCategory("life/health");
+        List<ProductVO> list3 = productService.getListCategory("sports/leisure");
+        log.info(productList);
+        log.info(list1);
+        log.info(list2);
+        log.info(list3);
+        if (!productList.isEmpty()){
+            model.addAttribute("list",productList);
+            model.addAttribute("list1",list1);
+            model.addAttribute("list2",list2);
+            model.addAttribute("list3",list3);
+            model.addAttribute("list4",productListAsc);
+        }else {
+            model.addAttribute("listCheck","empty");
+            return;
+        }
+        model.addAttribute("pageMaker",new PageDTO(cri,productService.productGetTotal(cri)));
     }
-
     @GetMapping("/search")
     public String searchGet(Criteria cri, Model model){
         log.info("cri : " + cri);
@@ -62,15 +81,5 @@ public class MainController {
         }
         model.addAttribute("pageMaker", new PageDTO(cri,searchService.getTotal(cri)));
         return "product/search";
-    }
-    @GetMapping("/urlFind")
-    public String urlFind(HttpServletRequest request){
-        String url = request.getRequestURL().toString();
-        if(request.getQueryString()!=null){
-            url = url + "?" + request.getQueryString();
-        }
-        System.out.println(url);
-
-        return "main/main";
     }
 }

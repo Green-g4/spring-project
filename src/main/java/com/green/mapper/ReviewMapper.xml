@@ -4,21 +4,37 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.green.mapper.ReviewMapper">
     <select id="getList" resultType="com.green.vo.ReviewVO">
-        select * from review
+        select  *
+        from review
+        where product_id=#{product_id}
+        order by review_num asc
     </select>
+    <select id ="getListPaging" resultType="map">
+        select review_num,product_id,member_id,review_content,review_date
+        from review where product_id=#{product_id}
+        order by review_num
+            limit #{cri.skip},#{cri.amount}
+    </select>
+
     <select id="read" resultType="com.green.vo.ReviewVO">
-        select * from review where id=#{id}
+        select * from review where review_num=#{review_num}
     </select>
     <insert id="insert">
-        insert into review(id,review_id,review_name,review_title,review_content,review_date,review_stars,member_id,product_id)
-        values (#{id},#{review_id},#{review_name},#{review_title},#{review_content},now(),#{review_stars},#{member_id},#{product_id})
+        insert into review (product_id, review_content,review_date,member_id)
+            value (#{product_id},#{review_content},now(),#{member_id})
     </insert>
     <delete id="delete">
-    delete from review where id=#{id}
+        delete from review where review_num=#{review_num}
     </delete>
     <update id="update">
         update review
-        set review_title =#{review_title}, review_content=#{review_content}, review_stars=#{review_stars}
-        where id = #{id}
+        set  review_content=#{review_content}
+        where review_num = #{review_num}
     </update>
+    <select id="idCheck" resultType="String">
+        select member_id from review where review_num=#{review_num}
+    </select>
+    <select id="countReview" resultType="int">
+        select count(review_num) from review where product_id = #{product_num}
+    </select>
 </mapper>

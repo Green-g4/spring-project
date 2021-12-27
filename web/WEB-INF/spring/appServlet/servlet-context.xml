@@ -21,6 +21,14 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 
+	<interceptors>
+		<interceptor>
+			<mapping path="/cart/**"/>
+			<exclude-mapping path="/cart/add"/>
+			<beans:bean id="CartIntreceptor" class="com.green.interceptor.CartInterceptor"></beans:bean>
+		</interceptor>
+	</interceptors>
+
 	<context:component-scan base-package="com.green.controller" />
 	<beans:bean id="multipartResolver"
 				class="org.springframework.web.multipart.support.StandardServletMultipartResolver"/> <!-- multipartResolver(업로드관련 Bean)-->

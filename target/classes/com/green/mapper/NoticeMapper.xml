@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.green.mapper.NoticeMapper">
+    <select id="noticeListCount" resultType="Integer">
+        select count(*)
+        from push_notice;
+    </select>
+
+    <select id="noticeList" resultType="com.green.vo.NoticeVo">
+        select  notice_id,
+                notice_title,
+                notice_coments,
+                use_yn,
+                DATE_FORMAT(mod_date, '%Y-%m-%d') mod_date
+        from push_notice
+        order by notice_id
+            limit #{startIndex}, #{cntPerPage}
+
+    </select>
+    <select id="noticeOne" parameterType="String" resultType="com.green.vo.NoticeVo">
+        select  notice_id,
+                notice_title,
+                notice_coments
+        from push_notice
+        where notice_id = #{notice_id}
+    </select>
+    <insert id="noticeInsert" parameterType="com.green.vo.NoticeVo">
+        insert into push_notice
+        (
+            notice_title,
+            notice_coments,
+            mod_date
+        )
+        values
+            (
+                #{notice_title},
+                #{notice_coments},
+                NOW()
+            )
+    </insert>
+    <update id="noticeUpdate" parameterType="com.green.vo.NoticeVo">
+        update push_notice set
+                               notice_title = #{notice_title},
+                               notice_coments = #{notice_coments},
+                               mod_date = NOW()
+        where notice_id = #{notice_id}
+    </update>
+    <delete id="noticeDelete" parameterType="String">
+        delete from push_notice
+        where notice_id = #{notice_id}
+    </delete>
+</mapper>

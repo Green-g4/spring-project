@@ -33,10 +33,10 @@ public class SearchController {
             log.info("list: " + productList);
         }else{
             model.addAttribute("listcheck","empty");
-            return "product/search";
+            return "product/category_list";
         }
         model.addAttribute("pageMaker", new PageDTO(cri,service.getTotal(cri)));
-        return "product/search";
+        return "product/category_list";
     }
 
 }

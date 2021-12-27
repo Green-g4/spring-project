@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.green.mapper.AdminMapper">
+    <!-- 작가 등록 -->
+    <insert id="ProductEnroll">
+
+        <selectKey resultType="int" keyProperty="id" order="AFTER">
+
+            SELECT MAX(id) FROM product
+
+        </selectKey>
+
+        insert into product(product_name, authorId, cateCode, product_price, product_stock, product_discount, product_intro, cateName)
+        values(#{product_name},#{authorId}, #{cateCode},#{product_price},#{product_stock},#{product_discount},#{product_intro}, #{cateName})
+
+    </insert>
+
+    <!-- 카테고리 리스트 -->
+    <select id="cateList" resultType="com.green.vo.CategoryVO">
+
+        select * from category order by catecode
+
+    </select>
+
+    <!-- 상품 리스트 -->
+    <select id="goodsGetList" resultType="com.green.vo.ProductVO">
+
+        select  id, product_name,  b.authorName, c.cateName, product_stock, a.regDate
+        from product a
+        left outer join author b on a.authorId = b.authorId
+        left outer join category c on a.cateCode = c.cateCode
+        <if test="keyword != null">
+            where (product_name like concat ('%', #{keyword}, '%'))
+        </if>
+        order by id desc
+        limit #{skip}, #{amount}
+
+    </select>
+
+    <!-- 상품 총 갯수 -->
+    <select id="goodsGetTotal" resultType="int">
+
+        select count(*) from product
+
+        <if test="keyword != null">
+
+            where product_name like concat('%' , #{keyword}, '%')
+
+        </if>
+
+    </select>
+
+    <!-- 상품 조회 페이지 -->
+    <select id="goodsGetDetail" resultType="com.green.vo.ProductVO">
+
+        select id, product_name, (select authorName from author where authorId =product.authorId) authorName,
+               authorId, cateCode, product_price, product_stock, product_discount, product_intro, regDate, updateDate
+        from product where id = #{id}
+
+    </select>
+
+    <!-- MySQL -->
+    <!-- 상품 정보 수정 -->
+    <update id="goodsModify">
+
+        update product set product_name = #{product_name}, authorId = #{authorId}, cateCode = ${cateCode},
+                           product_price = #{product_price}, product_stock = #{product_stock}, product_discount = #{product_discount}, product_intro = #{product_intro}, updateDate = now()
+        where id = ${id}
+
+    </update>
+
+    <!-- 이미지 등록 -->
+    <insert id="imageEnroll">
+
+        insert into attachimage(id, fileName, uploadPath, uuid) values (#{id}, #{fileName}, #{uploadPath}, #{uuid})
+
+    </insert>
+
+    <!-- 상품 정보 삭제 -->
+    <delete id="goodsDelete">
+
+        delete from product where id = #{id}
+
+    </delete>
+
+    <!-- 지정 상품 이미지 전체 삭제 -->
+    <delete id="deleteImageAll">
+
+        delete FROM attachimage where id = #{id}
+
+    </delete>
+
+    <select id="getAttachInfo" resultType="com.green.vo.AttachImageVO">
+        select * from attachimage where id = #{id}
+    </select>
+</mapper>

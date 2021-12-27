@@ -8,16 +8,12 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ReviewVO {
-
-    private int id;
-    private String review_id;
-    private String review_name;
-    private String review_title;
+    private int review_num;
+    private int product_id;
+    private String member_id;
     private String review_content;
     private Date review_date;
-    private int review_stars;
-    private int member_id;
-    private int product_id;
+
 }
 
 
