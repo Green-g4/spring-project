@@ -7,7 +7,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Insert title here</title>
-  <link rel="stylesheet" href="../resources/css/admin/authorDetail.css">
+  <link rel="stylesheet" href="../resources/css/admin/adminDetail.css">
 
   <script
           src="https://code.jquery.com/jquery-3.4.1.js"
@@ -15,13 +15,13 @@
           crossorigin="anonymous"></script>
 </head>
 <body>
-<%@ include file="/resources/header/Spheader.jsp"%>
+<%@ include file="/resources/header/Adminheader.jsp"%>
 <div class="admin_content_wrap">
-  <div class="admin_content_subject"><span>작가 상세</span></div>
+  <div class="admin_content_subject"><span>관리자 상세</span></div>
   <div class="admin_content_main">
     <div class="form_section">
       <div class="form_section_title">
-        <label>작가 번호</label>
+        <label>관리자 번호</label>
       </div>
       <div class="form_section_content">
         <input class="input_block" name="authorId" readonly="readonly" value="<c:out value='${authorInfo.authorId }'></c:out>">
@@ -30,50 +30,14 @@
     </div>
     <div class="form_section">
       <div class="form_section_title">
-        <label>작가 이름</label>
+        <label>관리자 이름</label>
       </div>
       <div class="form_section_content">
         <input class="input_block" name="authorName" readonly="readonly" value="<c:out value='${authorInfo.authorName }'></c:out>" >
       </div>
     </div>
-    <div class="form_section">
-      <div class="form_section_title">
-        <label>소속 국가</label>
-      </div>
-      <div class="form_section_content">
-        <select class="input_block" name="nationId" >
-          <option value="none" selected disabled="disabled">=== 선택 ===</option>
-          <option value="01" disabled="disabled" <c:out value=" ${authorInfo.nationId eq '01' ?'selected':''}"/>>국내</option>
-          <option value="02" disabled="disabled" <c:out value=" ${authorInfo.nationId eq '02' ?'selected':''}"/>>국외</option>
-        </select>
-      </div>
-    </div>
-    <div class="form_section">
-      <div class="form_section_title">
-        <label>작가소개</label>
-      </div>
-      <div class="form_section_content">
-        <textarea class="input_block" name="authorIntro" readonly="readonly"><c:out value='${authorInfo.authorIntro }'/></textarea>
-      </div>
-    </div>
-    <div class="form_section">
-      <div class="form_section_title">
-        <label>등록 날짜</label>
-      </div>
-      <div class="form_section_content">
-        <input class="input_block" type="text" readonly="readonly" value="<fmt:formatDate value="${authorInfo.regDate}" pattern="yyyy-MM-dd"/>">
-      </div>
-    </div>
-    <div class="form_section">
-      <div class="form_section_title">
-        <label>수정 날짜</label>
-      </div>
-      <div class="form_section_content">
-        <input class="input_block" type="text" readonly="readonly" value="<fmt:formatDate value="${authorInfo.updateDate}" pattern="yyyy-MM-dd"/>">
-      </div>
-    </div>
     <div class="btn_section">
-      <button id="cancelBtn" class="btn">작가 목록</button>
+      <button id="cancelBtn" class="btn">관리자 목록</button>
       <button id="modifyBtn" class="btn modify_btn">수 정</button>
     </div>
   </div>
@@ -97,7 +61,7 @@
     e.preventDefault();
 
     $("input[name=authorId]").remove();
-    moveForm.attr("action", "/admin/authorManage")
+    moveForm.attr("action", "/admin/adminManage")
     moveForm.submit();
 
   });
@@ -107,7 +71,7 @@
 
     e.preventDefault();
 
-    moveForm.attr("action", "/admin/authorModify");
+    moveForm.attr("action", "/admin/adminModify");
     moveForm.submit();
 
   });
